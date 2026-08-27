@@ -44,7 +44,7 @@
     "commander": "^14.0.3",
     "express": "^5.2.1",
     "express-rate-limit": "^8.5.1",
-    "ioredis": "^5.11.0",
+    "ioredis": "^6.0.0",
     "mysql2": "^3.22.4",
     "pino": "^10.3.1",
     "prom-client": "^15.1.3",
