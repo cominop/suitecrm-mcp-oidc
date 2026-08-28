@@ -2,7 +2,7 @@ FROM node:20-alpine
 WORKDIR /app
 COPY server/package.json server/package-lock.json ./
 RUN npm ci --omit=dev
-COPY server/index.mjs server/auth.mjs server/redis.mjs server/acl-check.mjs ./
+COPY server/index.mjs server/auth.mjs server/redis.mjs server/acl-check.mjs server/audit-db.mjs ./
 COPY server/bridges/ ./bridges/
 RUN adduser -D appuser \
     && chown -R appuser /app \
