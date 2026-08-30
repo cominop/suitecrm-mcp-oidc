@@ -843,7 +843,7 @@ const healthRL = rateLimit({ windowMs:60000, max:120, standardHeaders:true, lega
 // ---------------------------------------------------------------------------
 const app = express();
 app.set('trust proxy', 1);
-app.use((req,res,next) => req.path==='/messages' ? next() : express.json()(req,res,next));
+app.use((req,res,next) => req.path.endsWith('/messages') ? next() : express.json()(req,res,next));
 
 app.get('/health', healthRL, (_req,res) => res.json({ status:'ok', entity:CODE, port:PORT, active:transports.size, circuit_breaker:circuitBreaker.state.toLowerCase(), persistence:'redis' }));
 
